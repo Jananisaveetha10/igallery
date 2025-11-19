@@ -26,173 +26,62 @@ Publish the website in the given URL.
 
 ## PROGRAM :
 ```
-<h2 align="center">SIX CHAMPION SPORTS</h2>
+html
 <!DOCTYPE html>
-
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-  <title>Image Gallery</title>
-  
-
-  <link rel="stylesheet" href="styles.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
 </head>
-<style>
- 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
-}
-
-.image-container {
-  position: relative;
-  overflow: hidden;
-  width: 500px;
-  height: 400px;
-}
-
-.gallery-item {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.1);
-}
-
-
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: auto;
-}
-
-.modal-content {
-  display: block;
-  margin: auto;
-  max-width: 80%;
-  max-height: 80%;
-}
-
-.close {
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: #ddd;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#caption {
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
-  padding: 10px;
-}
-
-</style>
 <body>
+    <header style="text-align: center; background-color: #333; color: white; padding: 1rem 0;">
+        <h1>Actor Vijay</h1>
+    </header>
 
-  <div class="gallery">
-    <div class="image-container">
-      <img src="basket ball.jpg"  alt="basket ball" class="gallery-item">
+    <div style="white-space: nowrap; overflow-x: auto; padding: 1rem;">
+        <div style="display: inline-block; margin-right: 10px;" onclick="openModal(this)">
+            <img src="leo.png" style="height: 200px;">
+        </div>
+        <div style="display: inline-block; margin-right: 10px;" onclick="openModal(this)">
+            <img src="varisu.png" style="height: 200px;">
+        </div>
+        <div style="display: inline-block; margin-right: 10px;" onclick="openModal(this)">
+            <img src="jananayagan.png" style="height: 200px;">
+        </div>
+        <div style="display: inline-block;" onclick="openModal(this)">
+            <img src="ghilli.png" style="height: 200px;">
+        </div>
     </div>
-    <div class="image-container">
-      <img src="cricket.jpg"  alt="cricket" class="gallery-item">
+
+    <div id="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);">
+        <span style="position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeModal()">&times;</span>
+        <img id="modalImage" style="display: block; margin: 5% auto; max-width: 80%;">
     </div>
-    <div class="image-container">
-      <img src="throw ball.jpg"  alt="throw ball" class="gallery-item">
-    </div>
-    <div class="image-container">
-      <img src="tennis.jpg" alt="tennis" class="gallery-item">
-    </div>
-    <div class="image-container">
-      <img src="hockey.jpg"  alt="hockey" class="gallery-item">
-    </div>
-    <div class="image-container">
-      <img src="kabadi.jpg"  alt="kabadi" class="gallery-item">
-    </div>
-  </div>
 
-  
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
-  </div>
+    <script>
+        function openModal(element) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = element.querySelector("img").src;
+        }
 
-  <script>
-  
-const modal = document.getElementById("myModal");
-const modalImg = document.getElementById("img01");
-const captionText = document.getElementById("caption");
-const closeBtn = document.getElementsByClassName("close")[0];
-
-
-const images = document.querySelectorAll(".gallery-item");
-
-
-images.forEach(img => {
-  img.onclick = function() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  };
-});
-
-
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-};
-
-
-window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
-
-  </script>
-  <footer>
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+    <footer>
     <h2 align="center">Designed and developed by JANANI S</h2>
   </footer>
 </body>
-</html>
+</html
 ```
 
 
 ## OUTPUT:
-![alt text](<Screenshot 2025-01-02 223404-1.png>)
+
+<img width="1920" height="1200" alt="Screenshot 2025-11-19 092246" src="https://github.com/user-attachments/assets/ef61f040-abc1-4a1a-a123-01878dd51f57" />
+
 ## RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
